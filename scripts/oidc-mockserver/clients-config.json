@@ -1,0 +1,63 @@
+[
+  {
+    "ClientId": "implicit-mock-client",
+    "Description": "Client for implicit flow",
+    "AllowedGrantTypes": ["implicit"],
+    "AllowAccessTokensViaBrowser": true,
+    "AutomaticRedirectAfterSignout": true,
+    "RedirectUris": [
+      "http://localhost:4200",
+      "http://localhost:4200/assets/auth-oidc/silent-callback.html"
+    ],
+    "PostLogoutRedirectUris": ["http://localhost:4200/logout.html"],
+    "AllowedScopes": ["openid", "profile", "email"],
+    "IdentityTokenLifetime": 3600,
+    "AccessTokenLifetime": 3600,
+    "SignedOutCallbackPath": "http://localhost:4200/logout.html",
+    "SignedOutRedirectUri": "http://localhost:4200/logout.html"
+  },
+  {
+    "ClientId": "client-credentials-mock-client",
+    "ClientSecrets": ["client-credentials-mock-client-secret"],
+    "Description": "Client for client credentials flow",
+    "AllowedGrantTypes": ["client_credentials"],
+    "AllowedScopes": ["some-app"]
+  },
+  {
+    "ClientId": "authorisation-code-mock-client",
+    "Description": "Client for authorisation code",
+    "AllowedGrantTypes": ["authorization_code"],
+    "AllowAccessTokensViaBrowser": false,
+    "AutomaticRedirectAfterSignout": true,
+    "RequireClientSecret": false,
+    "RedirectUris": [
+      "http://localhost:4200",
+      "http://localhost:4200/assets/auth-oidc/silent-callback.html"
+    ],
+    "PostLogoutRedirectUris": ["http://localhost:4200/logout.html"],
+    "AllowedScopes": ["openid", "profile", "email"],
+    "IdentityTokenLifetime": 3600,
+    "AccessTokenLifetime": 3600,
+    "SignedOutCallbackPath": "http://localhost:4200/logout.html",
+    "SignedOutRedirectUri": "http://localhost:4200/logout.html"
+  },
+  {
+    "ClientId": "authorisation-code-pkce-mock-client",
+    "Description": "Client for PKCE authorisations code",
+    "RequirePkce": true,
+    "RequireClientSecret": false,
+    "AllowedGrantTypes": ["authorization_code"],
+    "AllowAccessTokensViaBrowser": false,
+    "AutomaticRedirectAfterSignout": true,
+    "RedirectUris": [
+      "http://localhost:4200",
+      "http://localhost:4200/assets/auth-oidc/silent-callback.html"
+    ],
+    "PostLogoutRedirectUris": ["http://localhost:4200/logout.html"],
+    "AllowedScopes": ["openid", "profile", "email"],
+    "IdentityTokenLifetime": 3600,
+    "AccessTokenLifetime": 3600,
+    "SignedOutCallbackPath": "http://localhost:4200/logout.html",
+    "SignedOutRedirectUri": "http://localhost:4200/logout.html"
+  }
+]

@@ -1,0 +1,6 @@
+# feeds
+*.xml
+*.json
+
+# files
+*.html

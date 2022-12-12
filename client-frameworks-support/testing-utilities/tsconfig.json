@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es2017",
+    "declaration": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+  },
+  "exclude": [
+    "node_modules",
+    "./dist/**/*"
+  ],
+}

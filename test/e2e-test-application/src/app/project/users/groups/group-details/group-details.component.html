@@ -1,0 +1,82 @@
+<section class="fd-section">
+  <div class="fd-section__header">
+    <h3 class="fd-section__title">{{ groupLabel }}</h3>
+  </div>
+
+  <div class="fd-layout-panel">
+    <div class="fd-layout-panel__body">
+      <p>
+        This is a dynamic node with value:
+        <strong>{{ pathParams?.group }}</strong>
+      </p>
+
+      <a
+        class="fd-link clickable"
+        (click)="
+          linkManager()
+            .fromContext('project')
+            .navigate('/users/groups')
+        "
+      >
+        <span class="sap-icon--navigation-left-arrow"></span> Back to Groups
+      </a>
+    </div>
+  </div>
+</section>
+<section class="fd-section">
+  <div class="fd-layout-panel">
+    <div class="fd-layout-panel__body">
+      <p>Navigation node configuration for <strong>dynamic node</strong> demo:</p>
+      <app-code-snippet
+        data="{
+    {
+      pathSegment: ':group',
+      viewUrl: '/sampleapp.html#/groups/:group'
+    }
+  }"
+      ></app-code-snippet>
+    </div>
+  </div>
+</section>
+<section class="fd-section">
+  <div class="fd-layout-panel">
+    <div class="fd-layout-panel__body">
+      <app-code-snippet
+        data="{
+          LuigiClient.linkManager().fromContext('project').getCurrentRoute().then(...)
+        }"
+      ></app-code-snippet>
+      <button data-testid="curr-button" (click)="getCurrentRoute()">
+        getCurrentRoute
+      </button>
+      <p data-testid="curr-text">{{currentRoute}}</p>
+    </div>
+    <div class="fd-layout-panel__body">
+      <app-code-snippet
+        data="{
+          LuigiClient.linkManager().fromParent().getCurrentRoute().then(...)
+        }"
+      ></app-code-snippet>
+      <button data-testid="curr-link-from-parent" (click)="getCurrentRouteFromParent()">
+        getCurrentRoute fromParent
+      </button>
+      <p data-testid="curr-text-from-parent">{{currentRouteFromParent}}</p>
+    </div>
+    <div class="fd-layout-panel__body">
+      <app-code-snippet
+        data="{
+          LuigiClient.linkManager().fromClosestContext().getCurrentRoute().then(...)
+        }"
+      ></app-code-snippet>
+      <button
+        data-testid="curr-link-from-closest-context"
+        (click)="getCurrentRouteFromClosestContext()"
+      >
+        getCurrentRoute fromClosestContext
+      </button>
+      <p data-testid="curr-text-from-closest-context">
+        {{currentRouteFromClosestContext}}
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<section class="fd-section">
+  <div class="fd-section__header">
+    <h3 class="fd-section__title">Anonymous content</h3>
+  </div>
+  <div class="fd-layout-panel">
+    <div class="fd-layout-panel__body">
+      <p *ngIf="exclusive">
+        This page is visible <strong> only </strong> for users that are not logged in.
+      </p>
+      <p *ngIf="!exclusive">
+        This page is visible for all users, also those that are not logged in.
+      </p>
+    </div>
+  </div>
+</section>
